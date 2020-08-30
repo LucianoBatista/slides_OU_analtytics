@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Analyst - Desafio TRYBE</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Luciano O. Batista" />
+    <script src="libs/header-attrs-2.3.2/header-attrs.js"></script>
+    <link href="libs/tile-view-0.2.1/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.1/tile-view.js"></script>
+    <link href="libs/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Data Analyst - Desafio TRYBE
+## Análise Exploratória de Dados
+### Luciano O. Batista
+### Como melhorar a experiência de aprendizagem dos estudantes?
+### <br><br><br><font size='5'>.right[.small[29/08/2020]]</font>
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class: inverse
+
+### Base de Dados
+
+- Foram utilizados dados reais de mais de 30 mil estudantes da Open University (OU). Universidade de ensino online no Reino Unido.
+- Os dados estão distribuídos em 7 tabelas, contendo informações sobre:
+  - Cursos
+  - Estudantes
+  - Plataforma online
+- Toda informação foi coletada e anonimizada para preservar a privacidade dos estudantes.
+
+--
+
+### Objetivo
+
+- Apresentar insights importantes que possam auxiliar na tomada de decisão e consequentemente melhorar a experiência de aprendizagem dos estudantes.
+
+--
+
+### Público Alvo
+
+- Gerência
+
+---
+
+class: inverse, middle, center
+
+# Cursos e Plataforma Online
+
+.left[.footnote[[*] Alguns cursos não são ofertados por todo período disponível no dataset, e alguns gráficos terão espaços em branco devido a esse aspecto]]
+---
+
+class: center
+
+# Oferta e Duração dos Cursos
+
+.left[Observou-se que sempre que um curso é ofertado  no **&lt;span style="color:#12A661"&gt;primeiro período&lt;/span&gt;** do ano ele possui menor carga horária total (em dias), comparado ao **&lt;span style="color:#1495B3"&gt;segundo período&lt;/span&gt;**.]
+
+![](slides_files/figure-html/courses_duration-1.svg)&lt;!-- --&gt;
+
+
+
+---
+
+class: center
+
+# Perfomance vs Duração
+
+.left[Mesmo com uma redução considerável na carga horária dos cursos **(30 a 40 dias)**, no geral a performance dos estudantes não sofreu nenhuma mudança significativa. Porém, observamos uma queda de mais de 12% quando olhamos para o **&lt;span style="color:#12A661"&gt;Curso B&lt;/span&gt;**, no período de 2014/02.]
+
+![](slides_files/figure-html/score_period-1.svg)&lt;!-- --&gt;
+
+
+---
+
+class: center
+
+# Material de consulta
+
+.left[A OU (Open University) oferece diversos materiais para auxiliar os estudantes. Com o tempo, houve aumento da quantidade de recursos assim como a **&lt;span style="color:#12A661"&gt;adição de novos&lt;/span&gt;**.]
+
+![](slides_files/figure-html/resource-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+# Material de consulta
+
+
+
+
+.left[Apesar do aumento na quantidade total de materiais ofertados ao longo do tempo: **2463** em 2013 e **3124** em 2014, esse comportamento não é linear quando analisamos curso a curso. E curiosamente, no curso B, no mesmo período que houve menos oferta de material **&lt;span style="color:#12A661"&gt;(mais de 100 recursos a menos)&lt;/span&gt;**, é o período que observamos uma queda na média do score final dos estudantes.]
+
+![](slides_files/figure-html/resource_class-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+# Período das Avaliações
+
+.left[Cada curso possui avaliações intermediárias **&lt;span style="color:#12A661"&gt;(TMA)&lt;/span&gt;** ao longo do período e avaliações finais **&lt;span style="color:#8F1F17"&gt;(Exam)&lt;/span&gt;** na última semana. Porém, um tipo de avaliação **&lt;span style="color:#A67B24"&gt;(CMA)&lt;/span&gt;** não ocorre para todas as disciplinas e nem em todos períodos. Por ser uma avaliação assistida por computador, presume-se que não se aplica a todos os cursos.]
+
+![](slides_files/figure-html/period_tests-1.svg)&lt;!-- --&gt;
+
+---
+
+class: inverse, center, middle
+
+# Estudantes
+
+
+---
+
+class: center
+
+# Taxa de Reprovação
+
+.left[Aqui observa-se um padrão interessante em relação a taxa de reprovação nos cursos. Apesar de vermos que a média de performance permanece praticamente sem alteração ao longo dos períodos (slide 5), a **taxa de reprovação** costuma ser um pouco **&lt;span style="color:#12A661"&gt;maior&lt;/span&gt;** nos períodos mais curtos (considerando os cursos que foram ofertados mais de 3 vezes).]
+
+![](slides_files/figure-html/fail_ratio-1.svg)&lt;!-- --&gt;
+
+
+---
+
+class: center
+
+# Taxas de Desistência e Aprovação
+
+.left[Analisando as taxas de desitência e aprovação é observado que os cursos **&lt;span style="color:#12A661"&gt;A e G&lt;/span&gt;** apresentam as menores taxas de desistência. Além disso, o curso **&lt;span style="color:#12A661"&gt;Curso A&lt;/span&gt;** apresenta a maior taxa de aprovação, aproximadamente 7 a cada 10 estudantes são aprovados.]
+
+.pull-left[
+![](slides_files/figure-html/withdrawn_ratio-1.svg)&lt;!-- --&gt;
+]
+
+.pull-right[
+![](slides_files/figure-html/pass_ratio-1.svg)&lt;!-- --&gt;
+]
+
+---
+
+class: center
+
+# Quantidade de Estudantes por Gênero
+
+.left[Os dados mostram uma população predominantemente feminina em 2 cursos específicos: **Curso B e Curso G**. Em todas os outros temos mais homens participando dos cursos. Tal aderência pode ter relação com características intrínsecas dos respectivos cursos.]
+
+![](slides_files/figure-html/unnamed-chunk-2-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+# Distribuições dos Scores Finais
+
+.left[Após ter visualizado no slide 5 a média dos scores finais, é interessante observar como foi a distribuição de notas ao longo do tempo e por curso.]
+
+.left[O que observa-se é um comportamento diferenciado em 2 cursos (**&lt;span style="color:#12A661"&gt;Curso B e Curso G&lt;/span&gt;**). Ambos possuem um pico de estudantes com performance muito elevada **(acima de 90 pontos)**.]
+
+![](slides_files/figure-html/unnamed-chunk-3-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+# Distribuições dos Scores Finais
+
+.left[Também é possível notar que todos os cursos mantém um perfil característico de distribuição dos scores ao longo do tempo. Tal fator nos leva a acreditar que existe uma manuntenção da forma como os cursos vem sendo trabalhados e também uma manuntenção do perfil de aluno que normalmente opta por cada curso.]
+
+![](slides_files/figure-html/unnamed-chunk-4-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+## Distribuição da Taxa de Acesso à Plataforma
+
+.left[Como a plataforma online da OU oferece grande quantidade de materiais, e toda interação online é registrada no banco de dados, pode ser útil observar se existe diferença entre os estudantes de **alto desempenho** (High), apresentado no gráfico abaixo, e os demais.]
+
+
+![](slides_files/figure-html/unnamed-chunk-5-1.svg)&lt;!-- --&gt;
+
+
+---
+
+class: center
+
+## Distribuição da Taxa de Acesso à Plataforma
+
+.left[Abaixo estão as distribuições do acessso de estudantes que tiveram **scores entre 50 e 90** (Medium). Observando o eixo da taxa de acesso à plataforma, vemos que a mesma é muito baixa quando comparada com os estudantes de alto desempenho.]
+
+![](slides_files/figure-html/unnamed-chunk-6-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+## Distribuição da Taxa de Acesso à Plataforma
+
+.left[Abaixo estão os estudantes que foram reprovados, pois tiveram um **score menor que 50** (Low). Observa-se que mesmo sendo reprovados eles obtiveram uma taxa de acesso não tão distante dos estudantes de alto desempenho. O que leva acreditar que sua reprovação pode ser consequência de um outro fator.]
+
+![](slides_files/figure-html/unnamed-chunk-7-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+# Média da Taxa de Acesso à Plataforma
+
+.left[Após ter uma visão geral do comportamento do acesso à plataforma entre diferentes perfis de estudantes, fica claro ao ver as médias que quem mais acessa os recursos oferecidos pela OU são os estudantes de alto desempenho. Também é possível ver que nos períodos de menor carga horária tem-se um aumento na taxa de acesso.]
+
+![](slides_files/figure-html/unnamed-chunk-8-1.svg)&lt;!-- --&gt;
+
+
+
+
+---
+
+class: center
+
+# Perfil dos Acessos à Plataforma
+
+.left[No gráfico seguinte é visto o acesso à plataforma relacionado aos dados ao longo da duração do curso no eixo horizontal (em dias), e em conjunto com os cursos e o respectivo período.]
+
+![](slides_files/figure-html/unnamed-chunk-10-1.svg)&lt;!-- --&gt;
+
+---
+
+class: center
+
+# Perfil dos Acessos à Plataforma
+
+.left[Veja que a **&lt;span style="color:#12A661"&gt;linha de tendência&lt;/span&gt;**  apresenta diferentes picos durante um determinado período. Esses picos são referentes aos períodos das avaliações, sugerindo que os estudantes acessam mais os recursos quando se aproxima das datas das avaliações.]
+
+![](slides_files/figure-html/unnamed-chunk-11-1.svg)&lt;!-- --&gt;
+
+
+---
+
+class: center
+
+# Carcterísticas por Região
+
+.left[Observa-se insights interessantes sobre a localização desses estudantes. No **Sul do Reino Unido** está localizado a **&lt;span style="color:#12A661"&gt;maior parcela&lt;/span&gt;** dos estudantes que estiveram matriculados na OU e em segundo lugar a Escócia.
+
+Também nota-se que existe maior número de homens do que mulheres, aproximadamente **36% a mais**.
+
+Vemos que a maior fatia dos estudantes possuem entre **0 e 35 anos**, e novamente o Sul e a Escócia concentra maior parcela.]
+
+
+
+
+.pull-left[
+&lt;iframe src="interactive_plot_gender.html" width="900" height="600" scrolling="yes" seamless="seamless" frameBorder="0"&gt; &lt;/iframe&gt;]
+
+.pull-right[
+&lt;iframe src="interactive_plot_ageband.html" width="900" height="600" scrolling="yes" seamless="seamless" frameBorder="0"&gt; &lt;/iframe&gt;]
+
+---
+
+class: center
+background-color: #D2E31B
+
+## Auxiliando na Tomada de Decisão!
+
+.left[
+- Pode ser interessante um replanejamento dos cursos de menor duração, e assim tentar diminuir a taxa de reprovação nos respectivos períodos.
+
+- Alguns cursos precisam ser estudadas em mais detalhes: 
+  - Cursos B e G: Entender quais fatores são mais determinantes para as mulheres optarem por esses cursos. 
+  - Curso A: Avaliar quais parâmetros fazem este curso ter altas taxas de aprovação, e assim tentar replicar para outros cursos.]
+
+.left[
+&lt;img src="umg/check.png" width="683" /&gt;
+]
+---
+
+class: center
+background-color: #D2E31B
+
+## Auxiliando na Tomada de Decisão!
+
+.left[
+- Os dados mostram que existe maior acesso à plataforma por estudantes de alto desempenho. Sendo assim, pode ser importante o incentivo mais efetivo ao uso da plaforma online.
+
+- Os perfis de acesso à plataforma mostram picos de acesso ao longo de um determinado periodo e curso. Esses perfis podem ser importantes para o time de Data Science prever a demanda de acesso à plataforma, evitando assim quedas no servidor devido ao aumento tráfego.
+
+- Algumas ações de marketing podem ser importantes para promover avanço nos negócios:
+ - Promover o curso em outras regiões do Reino Unido, além do Sul e da Escócia, pois esses concentram maior parte dos estudantes.
+ - Promover os cursos para pessoas de faixa-etária acima dos 35 anos, assim como para o público feminino.
+]
+
+.left[
+&lt;img src="umg/check.png" width="40%" /&gt;
+]
+
+---
+
+class: inverse, center
+background-color: #D2E3BA
+
+## **&lt;span style="color:#12A661"&gt;FIM&lt;/span&gt;**
+
+
+### [LinkedIn](https://www.linkedin.com/in/lucianobatistads/)
+
+### [GitHub](https://github.com/LucianoBatista)
+
+### [Blog](lobdata.com.br/)
+
+### [Fonte dos dados](https://www.nature.com/articles/sdata2017171)
+
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+## **&lt;span style="color:#12A661"&gt;Obrigado!&lt;/span&gt;**
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
