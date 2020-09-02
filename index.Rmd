@@ -1,5 +1,5 @@
 ---
-title: "Data Analyst - Desafio TRYBE"
+title: "Data Analyst - Desafio"
 subtitle: "Análise Exploratória de Dados"
 institute: "Como melhorar a experiência de aprendizagem dos estudantes?"
 author: "Luciano O. Batista"
@@ -1214,7 +1214,7 @@ background-color: #D2E31B
 
 .left[
 ```{r, fig.height=4.5, fig.width=11}
-knitr::include_graphics("umg/check.png")
+knitr::include_graphics("img/check.png")
 ```
 ]
 ---
@@ -1236,7 +1236,7 @@ background-color: #D2E31B
 
 .left[
 ```{r, out.width="40%"}
-knitr::include_graphics("umg/check.png")
+knitr::include_graphics("img/check.png")
 ```
 ]
 
