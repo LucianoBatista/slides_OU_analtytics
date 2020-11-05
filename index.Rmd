@@ -130,7 +130,7 @@ class: center
 
 # Oferta e Duração dos Cursos
 
-.left[Observou-se que sempre que um curso é ofertado  no **<span style="color:#12A661">primeiro período</span>** do ano ele possui menor carga horária total (em dias), comparado ao **<span style="color:#1495B3">segundo período</span>**.]
+.left[Observou-se que sempre que um curso é ofertado  no **<span style="color:#12A661">primeiro período</span>** do ano ele possui maior carga horária total (em dias), comparado ao **<span style="color:#1495B3">segundo período</span>**.]
 
 ```{r courses_duration, fig.height=4.5, fig.width=8}
 #class: animated slideInRight fadeOutLeft, center
